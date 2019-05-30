@@ -164,11 +164,18 @@ class CustomWizard::Builder
       params[:value] = standardise_boolean(params[:value])
     end
 
+    if field_template['type'] == 'range'
+      params[:range_min] = field_template["range_min"]
+      params[:range_max] = field_template["range_max"]
+      params[:value] = field_template["range_default_val"] || params[:range_min]
+    end
+
     field = step.add_field(params)
 
     if field_template['type'] === 'dropdown'
       build_dropdown_list(field, field_template)
     end
+
   end
 
   def prefill_profile_field(update)

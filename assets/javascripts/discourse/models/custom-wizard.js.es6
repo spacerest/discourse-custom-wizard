@@ -109,6 +109,27 @@ const CustomWizard = Discourse.Model.extend({
             if (f.dropdown_none === '') delete f.dropdown_none;
           }
 
+          if (f.type === 'range') {
+            const min = f.range_min;
+            const max = f.range_max;
+            const default_val = f.range_default_val;
+            if (!min || !max || !f.range_min || !f.range_max) {
+              error = 'field.need_range';
+              return;
+            }
+
+            if (!(max > min)) {
+              error = 'field.need_max_larger_than_min'
+              return;
+            }
+
+            if (default_val > max || default_val < min) {
+              error = 'field.need_default_val_between_min_max'
+              return;
+            }
+
+          }
+
           delete f.isNew;
 
           step['fields'].push(f);

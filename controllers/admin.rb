@@ -74,6 +74,30 @@ class CustomWizard::AdminController < ::ApplicationController
               break
             end
           end
+
+          if f["type"] === 'range'
+            min = f["range_min"]
+            max = f["range_max"]
+            default_val = f["range_default_val"]
+            if (!min || !max)
+                error = 'field.need_range'
+                break
+            end
+
+            if (!(max > min))
+              error = 'field.need_max_larger_than_min'
+              break
+            end
+
+            if (!default_val || default_val > max || default_val < min)
+              error = 'field.need_default_val_between_min_max'
+              break
+            end
+
+
+
+
+          end
         end
       end
 

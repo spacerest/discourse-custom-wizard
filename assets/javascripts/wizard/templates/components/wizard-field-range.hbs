@@ -1,0 +1,11 @@
+<div class="range-container">
+
+    <div class="range-value-container"><span class="range-value">{{field.value}}</span></div>
+
+    <div class="range-label-container">
+        <span class="range-label range-min-label">{{field.range_min}}</span>
+        {{input type='range' class='custom-range-slider' min=field.range_min max=field.range_max value=field.value id=field.id}}
+        <span class="range-label range-max-label">{{field.range_max}}</span>
+    </div>
+
+</div>

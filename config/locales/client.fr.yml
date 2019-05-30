@@ -64,6 +64,9 @@ fr:
           field:
             need_choices: "Tous les menus déroulants ont besoin d'options."
             choices_label_empty: "Les étiquettes pour le choix personnalisé ne peuvent être vides."
+            need_range: "Les deux minimum et maximum ne peuvent être vides."
+            need_max_larger_than_min: "Le maximum doit être supérieur au minimum."
+            need_default_val_between_min_max: "La valeur par défaut doit être comprise entre le minimum et le maximum."
         step:
           header: "Étapes"
           title: "Titre"
@@ -77,6 +80,9 @@ fr:
           description: "Description"
           image: "Image"
           image_placeholder: "URL de l'image"
+          range_min_label: "Minimum d'intervalle"
+          range_max_label: "Maximum d'intervalle"
+          range_default_val_label: "Le valeur par défaut"
           dropdown_none: "Aucun"
           dropdown_none_placeholder: "Clé de traduction"
           choices_label: "Options du menu déroulant"

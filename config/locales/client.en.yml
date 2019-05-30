@@ -65,6 +65,9 @@ en:
           field:
             need_choices: "All dropdowns need choices."
             choices_label_empty: "Custom choice labels cannot be empty."
+            need_range: "Minimum or maximum cannot be empty."
+            need_max_larger_than_min: "Maximum needs to be larger than minimum."
+            need_default_val_between_min_max: "Default value needs to be between minimum and maximum."
         step:
           header: "Steps"
           title: "Title"
@@ -78,6 +81,9 @@ en:
           description: "Description"
           image: "Image"
           image_placeholder: "Image url"
+          range_min_label: "Range minimum"
+          range_max_label: "Range maximum"
+          range_default_val_label: "Default value"
           dropdown_none: "None"
           dropdown_none_placeholder: "Label"
           choices_label: "Dropdown Choices"

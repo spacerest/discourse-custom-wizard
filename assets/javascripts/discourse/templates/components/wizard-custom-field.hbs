@@ -73,6 +73,23 @@
   </div>
 {{/if}}
 
+{{#if isRangeSlider }}
+<div class="wizard-dropdown-choices">
+  <div class="wizard-header small underline">
+    {{i18n 'admin.wizard.field.range_min_label'}}
+  </div>
+  {{input name="key" value=field.range_min placeholderKey="admin.wizard.custom_value_placeholder"}}
+  <div class="wizard-header small underline">
+    {{i18n 'admin.wizard.field.range_max_label'}}
+  </div>
+  {{input name="key" value=field.range_max placeholderKey="admin.wizard.custom_value_placeholder"}}
+    <div class="wizard-header small underline">
+    {{i18n 'admin.wizard.field.range_default_val_label'}}
+  </div>
+  {{input name="key" value=field.range_default_val placeholderKey="admin.wizard.custom_value_placeholder"}}
+</div>
+{{/if}}
+
 {{#if isDropdown}}
   <div class="wizard-dropdown-choices">
     <div class="wizard-header small underline">
@@ -112,3 +129,4 @@
     {{input name="dropdown_none" value=field.dropdown_none placeholder=(i18n 'admin.wizard.field.dropdown_none_placeholder')}}
   </div>
 {{/if}}
+

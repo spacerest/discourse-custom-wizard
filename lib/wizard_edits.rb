@@ -24,7 +24,7 @@ end
 
 ::Wizard::Field.class_eval do
   attr_reader :label, :description, :image, :key, :min_length
-  attr_accessor :dropdown_none
+  attr_accessor :dropdown_none, :range_min, :range_max, :range_default_val
 
   def initialize(attrs)
     @attrs = attrs || {}
@@ -38,6 +38,9 @@ end
     @value = attrs[:value]
     @choices = []
     @dropdown_none = attrs[:dropdown_none]
+    @range_min = attrs[:range_min]
+    @range_max = attrs[:range_max]
+    @range_default_val = attrs[:range_default_val]
   end
 
   def label
@@ -138,7 +141,7 @@ end
 end
 
 ::WizardFieldSerializer.class_eval do
-  attributes :dropdown_none, :image
+  attributes :dropdown_none, :image, :range_min, :range_max, :range_default_val
 
   def label
     return object.label if object.label.present?
@@ -164,5 +167,17 @@ end
 
   def dropdown_none
     object.dropdown_none
+  end
+
+  def range_min
+    object.range_min
+  end
+
+  def range_max
+    object.range_max
+  end
+
+  def range_default_val
+    object.range_default_val
   end
 end

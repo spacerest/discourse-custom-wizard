@@ -9,6 +9,9 @@ export default Ember.Component.extend({
   choicesPreset: Ember.computed.equal('field.choices_type', 'preset'),
   choicesCustom: Ember.computed.equal('field.choices_type', 'custom'),
 
+  //adding range-slider
+  isRangeSlider: Ember.computed.equal('field.type', 'range'),
+
   @computed('field.type')
   isInput: (type) => type === 'text' || type === 'textarea',
 

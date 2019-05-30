@@ -184,7 +184,7 @@ export default {
       }.property('field.type', 'field.id')
     });
 
-    const StandardFieldValidation = ['text', 'textarea', 'dropdown', 'image', 'checkbox', 'user-selector', 'text-only', 'composer'];
+    const StandardFieldValidation = ['text', 'textarea', 'dropdown', 'image', 'checkbox', 'user-selector', 'text-only', 'composer', 'range'];
 
     FieldModel.reopen({
       hasCustomCheck: false,
